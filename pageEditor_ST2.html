@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - provide your student name</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css">  
+    <link rel="stylesheet" href="css/style.css">
+
+    
+</head>
+<body>
+
+<!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+    <header>
+      <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+          <h1><span>WELLNESS</span> MISSION</h1>
+          <p>Aiming for Good Health and Well-Being</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+      </div>
+
+      <div id="navigationbar">
+        <nav>
+          <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+    
+    
+
+    
+
+    <section class="stud">
+        <h2>Nirmal Kalubowila, ZENYA, Student 2 (W2181784)</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section class="subContainers">
+                <h2 id="splashScreen">Splash Screen</h2><br>
+                    <h3>Technical Description</h3>
+                        
+                        <p>
+                            The splash screen is structured using semantic HTML elements to organise the content.
+                            Here, the <span>main</span> element is the main container, 
+                            and the <span>section</span> elements are used to group the content, 
+                            such as the <span>title, mission, members, loader, countdown and button.</span>  
+                            That helps to improve readability and maintainability.
+
+                            The <span>h1</span> tag is used for the main website title to create a clear heading hierarchy, 
+                            and the <span>h2</span> tag is used for supportive headings. 
+                            The <span>span</span> element is used inside a heading, which allows to style specific part of the text. 
+                            The <span>img</span> tag is used to display the logo and the <span>p</span> elements are used to display team member names. 
+                            The <span>button</span> element provides an opportunity for user interaction for skipping the splash screen, 
+                            and the <span>span</span> inside the countdown updates the time dynamically using JavaScript. The <span>meta http-equiv="refresh" content="4; url=home.html"</span> 
+                            tag automatically redirects the user to home.html after 4 seconds, 
+                            which is useful for creating splash screens.
+                        </p><br>
+                        <p> 
+                            CSS mainly focus on positioning, layout, and visual design. 
+                            <span>Flexbox (display:flex)</span> is used in the <span>.topic</span> and <span>.members</span> sections
+                            to align horizontally. Furthermore, control spacing and positioning using
+                            <span>justify-content, align-items and gap</span>. The <span>flex-wrap</span> property ensures
+                            responsiveness on smaller screens.
+                            
+                            A full-screen background image is applied using
+                            <span>background-size: cover, background-position: center, and background-attachment: fixed</span> 
+                            for a consistent visual effect. A dark overlay is created using the <span>::before</span> pseudo-element combined with <span>position: fixed</span> 
+                            and <span>z-index</span> to ensure content appears above it.
+
+                            <span>Colors, spacing, font styles,</span> and <span>border-radius</span> improve readability and style. 
+                            The loader uses <span>border, border-radius,</span> and <span>@keyframes</span> spin for animation. 
+                            The button has <span>transition</span> and <span>:hover</span> for interactivity.
+
+                            JavaScript powers the countdown and skip button. 
+                            The updateCountdown function decreases the timer each second using setTimeout. 
+                            The skip button uses an event listener to redirect users to the home page immediately.
+                        <p><br>
+
+                        
+
+                        
+                    <h3>Accessibility</h3>
+                        <p>
+                            Accessibility was considered by using semantic HTML elements such as main and section, 
+                            which help screen readers understand the page structure. 
+                            Proper heading usage (h1 and h2) improves navigation and readability for assistive technologies.
+
+                            The image includes descriptive alt text (“Website logo”),  
+                            which helps visually impaired users to understand its purpose. 
+                            There is a good colour contrast between white text and the dark background overlay, 
+                            which makes the text clearer and more readable.
+
+                            Users can access the skip button using the tab key and activate it using the enter key,
+                            making the page usable without a mouse.
+
+                            Countdown is displayed as text, ensuring users can understand the timing before redirection. 
+                            Moreover, the automatic redirect using the meta tag provides an alternative way to proceed, 
+                            while the skip button gives users control. Overall, these techniques improve usability and ensure 
+                            the page is accessible to a wider range of users, including those using keyboards or assistive technologies. 
+                        </p><br>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST2.html#splashScreenVal">Splash Screen Validation</a></p> 
+                    
+                    <br>
+
+                    <h3>Link to the page</h3>
+                        <p><a href="splash.html">Splash Screen</a></p>
+            </section>
+
+            <section class="subContainers">
+                <h2 id="ActionImpactSimulator">Action Impact Simulator</h2><br>
+                    <h3>Technical Description</h3>
+                        <p>
+                            The page is built using HTML5 semantic tags to define a clear document outline.
+                            The <span>main</span> section holds the simulator content, such as top introduction
+                            and card based layout for user actions.
+                            Each action is placed inside a <span>section class = "card"</span> with a 
+                            <span>data-impact</span> attribute to store its value, which are later used in JavaScript calculations. 
+                            Headings <span>(h2, h3)</span> are used to create a clear content hierarchy, while <span>p</span> elements display descriptions and results.
+                            Images are added using the <span>img</span> tag inside each card.
+                            The <span>alt</span> attribute is included to describe the image content.
+                            The feedback area is grouped
+                            inside <span>.feedbackContainer</span>, where <span>span</span> elements are used to dynamically display 
+                            total points, selected actions, impact level, and feedback.
+                            A <span>button</span> is used for resetting the simulation 
+                        </p><br>
+                        
+                        <p>
+                            Cards are styled with fixed width and height to maintain consistency.
+                            The <span>.selected</span> class highlights chosen cards using 
+                            <span>border, box-shadow</span>, and <span>filter</span>, and a <span>transform: scale()</span> 
+                            effect is added on hover to improve interactivity.
+                            . The <span>::after</span> pseudo-element is used to display a ''Selected'' label on chosen cards.
+
+                            Different background styles <span>(low-bg, medium-bg, high-bg)</span> are applied dynamically based on the user's score.
+                            These use <span>background-image, background-size: cover</span>, and <span>background-attachment: fixed</span> 
+                            to create a full-screen effect. A dark overlay is added using the <span>::before</span> pseudo-element with
+                            <span>position: fixed</span> and <span>z-index</span> to improve text readability. 
+                            Smooth transitions are added using <span>transition</span> for background changes.
+
+                            The feedback container is styled using <span>box-shadow, border-radius, margin</span> and <span>padding</span> 
+                            to make it nice and smooth. Colour styles such as <span>lowText, mediumText,</span> and <span>highText</span> represent
+                            different impact levels using different text colors and box shadows.
+                            
+                            JavaScript adds interactivity to the page. 
+                            Event listeners detect when a card is clicked and toggle the selected class. 
+                            Functions like updateTotalPoints(), updateImpactLevel(), and updateFeedback() calculate and display results dynamically using the data-impact values. 
+                            The reset button clears all selections and resets the interface. 
+                            Background changes are also controlled through JavaScript based on the total score.
+
+                            
+
+                        </p><br>
+
+
+                    <h3>Accessibility</h3>
+                        <p>
+                            Every image contains descriptive alternative
+                            text that allows screen reader users to understand the context of the action cards.
+
+                            Furthermore, to improve readability over background images, 
+                            a semi-transparent dark overlay was added using the ::before pseudo-element. 
+                            This increases the contrast between text and the background.
+
+                            Apart from that, Selected cards are not only indicated by colour alone, 
+                            but they also display a ''Selected'' badge and a different border style.
+                            This helps users, including those with colour vision difficulties, clearly understand the selection.
+
+                            The reset button is standard HTML button element, which can 
+                            be accessed using the keyboard (Tab and Enter keys), supporting keyboard
+                            navigation.
+
+                            Furthermore Feedback such as total points, impact level, 
+                            and messages are shown as text, making it easier for screen readers to interpret. 
+
+                            And The page layout works on different screen sizes, 
+                            helping users access content on mobile and desktop devices.
+                        </p><br>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST2.html#aisVal">Action Impact Simulator Validation</a></p> 
+
+                    <br>    
+                    <h3>Link to the page</h3>
+                        <p><a href="ais.html">Action Impact Simulator</a></p>
+            </section>
+
+            <section class="subContainers">
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>
+                            The content page is structured using semantic HTML elements to create a clear and organized layout.
+                            The <span>main</span> element holds the primary content, which is divided into multiple <span>section</span> elements. 
+                            Each section represents a specific topic such as Introduction, Nutrients, and Conclusion, 
+                            using unique id attributes to support internal navigation.
+
+                            A navigation block at the top <span>(.main-section)</span> uses anchor links <span>(href="#section-id")</span> to allow users
+                            to quickly jump to different parts of the page.
+
+                            Headings such as <span>h1</span> and <span>h2</span> are used in a proper hierarchy to improve readability and structure. 
+                            Images are included using the <span>img</span> tag with descriptive <span>alt</span> text, 
+                            supporting both content understanding and accessibility.
+
+                            Furthermore, <span>p</span> tags are used for the text. 
+                            Links are added using <span>a</span> tags for internal navigation or external references. 
+                            A 'Go to Top' button is also included so users can easily scroll back to the top of the page.
+
+
+                        </p><br>
+                        
+                        <p>
+                           The <span>.main-section</span> class is centered using margins and fixed width,
+                            while links are styled as block elements to appear like buttons.
+                            <span>Borders, border-radius, and box-shadow</span> are applied to content containers and images to make it neat and smooth.
+                            Images use object-fit: cover to maintain proper proportions and prevent stretching and 
+                            Images are centered using <span>display: block</span> and <span>margin: auto</span>.
+                            Hover effects with <span>transform: scale()</span> on links, buttons, and section anchors provide visual feedback and make interactive elements more noticeable.
+                            Furthermore, pseudo-elements like <span>::after</span> are used to add arrows to section links.
+                            The <span>.top-btn</span> uses <span>position: fixed</span> to remain visible while scrolling, improving navigation on long pages.
+                            Box shadows, borders, and consistent colour usage (blue theme) create visual consistency.
+                            Overall, the CSS combines positioning, spacing, colour, 
+                            hover effects, box shadows, and pseudo-elements to create a structured, visually consistent, 
+                            and user-friendly design.
+                        </p><br>
+
+                    <h3>Accessibility</h3>
+                        <p>
+                            HTML elements such as header, nav, main, and section are used to clearly structure the page, 
+                            which helps screen readers understand and navigate the content easily. 
+                            Using proper heading hierarchy helps to improve navigation for users.
+
+                            Furthermore, all images contain alt text such as "balanced meal plate" and "healthy vs junk food",
+                            so users who can not see the images can still understand it's meaning
+                            using screen reader.
+                            
+                            The "Go to Top" button improves navigation for long pages, reducing the need for excessive scrolling.
+
+                            Internal navigation links make it easier for users to jump between sections.
+
+                            Moreover, color contrast is maintained by using dark text on white smoke background.
+                            That makes the content more readable.
+
+                            Hover effects provide visual feedback for interactive elements, 
+                            helping users recognize clickable items.
+                            
+                            Additionally, link states such as hover, visited, and active are styled differently, which improves clarity and usability.
+
+                            HTML elements like "a" and "button" are used. Therefore, 
+                            users can navigate the page using the keyboard (such as the Tab key).
+
+                            The page layout adapts to different screen sizes, which helps users to access the content using different devices.
+
+
+
+
+
+                        </p><br>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST2.html#contentVal">Content Page Validation</a></p> 
+
+                    <br>    
+                    <h3>Link to the page</h3>
+                        <p><a href="content_ST2.html">Content Page</a></p>
+            </section>
+
+            <section class="subContainers">
+                <h2 id="challenge"> Challenges and Lessons Learned</h2><br>
+                    <p>
+                        In the process of developing the Splash Screen, Action Impact Simulator (AIS) and Content Page, 
+                        a number of challenges arose. These problems assisted me in enhancing my problem-solving skills and web development knowledge.
+                    </p><br>
+                    
+                    <p>
+                        While creating the <span>splash screen</span>, I faced a few challenges. 
+                        I wasn't sure how to use the meta refresh tag to redirect the page. 
+                        I learned it from W3Schools, which helped me synchronise the redirect with a countdown timer. 
+                        From this, I learned how to use meta refresh tag properly.
+
+                        Furthermore,It was difficult to make the text clear against the background, 
+                        as the text was initially mixed with the image. I added a semi-transparent dark overlay using the ::before pseudo-element
+                        and controlled the layers using z -index. This improved the readability. 
+                        Here, I learned the importance of contrast and readability in web design.
+
+                        Not only that, creating a loading animation was another challenge. 
+                        I used CSS keyframes to animate a loader, which showed the users that the page was loading. 
+                        This helped me to understand how animation can improve the user experience.
+
+                        I had to set the correct timing and update the countdown dynamically. 
+                        Initially, the timing could not update properly. 
+                        Then, I used JavaScript setInterval() for the countdown update every second. 
+                        This taught me how JavaScript can be used to create interactive and dynamic web pages.
+                    </p><br>
+
+                    <p>
+                        In the <span>Action Impact Simulator (AIS)</span>, one of the biggest challenges was handling many updates at the same time. 
+                        As an example, highlighting the card, updating total points, showing the impact level, changing feedback, 
+                        and updating the background. Initially, these did not work together properly; 
+                        however, I solved this by creating separate functions for each task, calling them inside the click event. 
+                        I learned how to break a complex problem into smaller functions and solve it.
+
+                        Another challenge was getting the correct impact point value from each card because each card has a different value. 
+                        I solved this by using the data-impact attribute to store the points in HTML and retrieve them using getAttribute(). 
+                        This helped me to understand how HTML and JavaScript can work together to handle data.
+
+                        Furthermore, identifying which cards are selected or unselected when the user clicks them. 
+                        I solved this by using JavaScript add and remove class using this.classList.toggle('selected').  
+                        This allowed me to track selected and unselected cards and use them for calculations and styling. 
+                        From this, I learned how to dynamically add and toggle classes using JavaScript to control both design and functionality.
+
+                    </p><br>
+
+                    <p>
+                        For the <span>content page</span>, the main challenge was creating the “Go to Top” button. 
+                        I  managed to solve this by using an anchor link (#top) and CSS position: fixed to keep the button visible while scrolling.
+                        From this, I learned how to use internal links and positioning to improve navigation.
+                    </p>
+
+                    <p><br>
+                        Overall, these challenges helped me learn to debug issues, write code in a better way, and how to combine HTML, CSS, and JavaScript  effectively.
+                    </p>
+            </section>
+
+            <section class="subContainers">
+                <h2 id="compliance"> Compliance</h2><br>
+                    <p>
+                        All my pages (Splash Screen, Action Impact Simulator and Content Page) are in compliance with JANET rules
+                        by making sure that no content is inappropriate, uneducational and unethically applied. 
+                        The site is founded upon the theme of Health and Well-being, which is academic-oriented and does not comprise any destructive, offensive, and misleading information. 
+                        This makes it in accordance with the Acceptable Use Policy (AUP) of JANET 
+                        where network resources are to be used responsibly and lawfully.
+                    </p><br>
+                    
+                    <p>
+                        I have also adhered to the regulations of copyright when using images and external information.
+                        All the pictures are appropriate to the topic, and references have been clearly provided for the sources
+                        used in the content page. 
+                        This demonstrates academic integrity and prevents plagiarism, 
+                        which is a significant requirement under JANET and institutional regulations.
+                    </p><br>
+
+                    <p>
+                        In terms of data protection, the web site does not gather or retain any individual user information. 
+                        This makes sure that the principles of GDPR are observed since no sensitive information is being processed or misused. 
+                        Moreover, there are no insecure or malicious scripts on the site, and the JavaScript deployed (in the simulator and splash screen) is safe
+                        and not intended to perform malicious actions, which contributes to safe web practices.
+                    </p><br>
+
+                    <p>
+                        Accessibility has also been looked into and this is indirectly JANET compliance under the UK laws. 
+                        The use of semantic HTML elements, correct headings, image alt texts, and readable colour contrast has made the site inclusive
+                         and accessible to a large variety of users.
+                    </p><br>
+
+                    <p>
+                        Moreover, the layout and the organization of the pages contribute to high usability and accessibility that minimizes the the risk of excluding users.
+                        This aligns with ethical web development practices expected in educational environments connected to JANET.
+                    </p><br>
+
+                    <p>
+                        Generally, my application is based on the JANET standards because it provides proper content, 
+                        references to copyright, and user protection, as well as incorporating the principle of accessibility.
+                    </p>
+
+                    
+            </section>
+
+            <section class="subContainers">
+                <h2 id="meeting"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>8 <sup>th</sup> March 2026</td>
+                                    <td>Online</td>
+                                    <td>Agree SDG assign roles and make individual wireframes.</td>
+                                    <td>Yes</td>
+                                    <td>Agree to take responsibility of Student 2 and make my individual wireframe.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>14 <sup>th</sup> March 2026</td>
+                                    <td>Physical</td>
+                                    <td>Confirmed the Logo and Colour themes and topic</td>
+                                    <td>Yes</td>
+                                    <td>Help finalize the logo colour theme and topic, and provide feedback and ideas.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>19 <sup>th</sup> March 2026</td>
+                                    <td>Online</td>
+                                    <td>Corrected some errors and discussed together</td>
+                                    <td>Yes</td>
+                                    <td>Reviewed my individual code and discussed whether our pages are properly connected to the global CSS</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>23 <sup>th</sup> March 2026</td>
+                                    <td>Online</td>
+                                    <td>Content page, Page editor and validation related doubts</td>
+                                    <td>Yes</td>
+                                    <td>Started developing my content page, page editor, and validation page.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>26 <sup>th</sup> March 2026</td>
+                                    <td>Online</td>
+                                    <td>Check everyone individual pages and shared pages</td>
+                                    <td>Yes</td>
+                                    <td>Finalized my individual content and added finishing touches to the shared pages.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>27 <sup>th</sup> March 2026</td>
+                                    <td>Physical</td>
+                                    <td>Did final checks and integrated the whole project</td>
+                                    <td>Yes</td>
+                                    <td>Performed the integration</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section class="subContainers">
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        
+                        <li>W3Schools (n.d.) HTML, CSS and JavaScript tutorials. Available at <br>
+                        <a href="https://www.w3schools.com/"  target="_blank">https://www.w3schools.com/</a>(Accessed: 10 March 2026).</li>
+
+                        <li>Pexels (n.d.) Free stock photos. Available at: <br> 
+                        <a href="https://www.pexels.com/" target="_blank">https://www.pexels.com/</a>(Accessed: 15 March 2026).</i></li>
+
+                        <li>Centre for Health Protection (n.d.) Image on healthy eating. Available at: <br> 
+                        <a href="https://www.chp.gov.hk/en/static/90017.html" target="_blank">https://www.chp.gov.hk/en/static/90017.html</a> (Accessed: 23 March 2026).</li>
+
+                        <li>Kore App (n.d.) Difference between junk and healthy food [Online image]. Available at: <br>
+                        <a href="https://koreapp.fit/blog/difference-between-junk-and-healthy-food" target="_blank">https://koreapp.fit/blog/difference-between-junk-and-healthy-food</a> (Accessed: 26 March 2026).</li>
+                        
+                        <li>World Health Organization (2025) Healthy Diet - Fact Sheet. Available at: <br>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank">https://www.who.int/news-room/fact-sheets/detail/healthy-diet</a> (Accessed: 24 March 2026).</li>
+
+                        <li>World Health Organization (2023) Healthy Diet Fact Sheet No. 394. Available at: <br>
+                        <a href="https://cdn.who.int/media/docs/default-source/healthy-diet/healthy-diet-fact-sheet-394.pdf" target="_blank">https://cdn.who.int/media/docs/default-source/healthy-diet/healthy-diet-fact-sheet-394.pdf</a> (Accessed: 26 March 2026).</li>
+
+                        <li>Centers for Disease Control and Prevention (2025) Healthy Eating Tips. Available at: <br>
+                        <a href="https://www.cdc.gov/nutrition/features/healthy-eating-tips.html" target="_blank">https://www.cdc.gov/nutrition/features/healthy-eating-tips.html</a> (Accessed: 24 March 2026).</li>
+
+                        <li>Centers for Disease Control and Prevention (2025) Tips for Healthy Eating for a Healthy Weight. Available at: <br>
+                        <a href="https://www.cdc.gov/healthy-weight-growth/healthy-eating/index.html" target="_blank">https://www.cdc.gov/healthy-weight-growth/healthy-eating/index.html</a> (Accessed: 24 March 2026).</li>
+
+                        <li>U.S. Department of Health and Human Services (2025) Dietary Guidelines for Americans 2025–2030. Available at: <br>
+                        <a href="https://cdn.realfood.gov/DGA.pdf" target="_blank">https://cdn.realfood.gov/DGA.pdf</a> (Accessed: 24 March 2026).</li>
+
+                    </ul>
+            </section>
+
+            <p><a href="#top" class="top-btn">Go to Top ↑</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside >
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                
+                <li>Student 2</li>
+                <ul> 
+                    <li><a href="#splashScreen">Splash Screen</a></li>
+                    <li><a href="#ActionImpactSimulator">Action Impact Simulator</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                    
+               
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#meeting">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2026 Wellness Mission</p>
+        <p>
+            <a href="pageEditor_ST2.html">Page Editor</a> |
+            <a href="validation_ST2.html">Validation</a>
+            <p>Nirmal Kalubowila : W2181784</p>
+        </p>
+    </footer>
+</body>
+</html>

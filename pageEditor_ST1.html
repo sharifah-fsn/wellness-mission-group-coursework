@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - K.V.Naduni Samarawickrama</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <header id="top">
+      <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+          <h1><span>WELLNESS</span> MISSION</h1>
+          <p>Aiming for Good Health and Well-Being</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+      </div>
+
+      <div id="navigationbar">
+        <nav>
+          <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+    <section class="stud">
+        <h2>K.V.Naduni Samarawickrama, ZENYA, Student 1 (W2181791)</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <section class="subContainers">
+                <h2 id="home">Home page</h2>
+                    <h3>Technical Description</h3>
+                        <p> The home page was created using HTML to structure the content and CSS to control the appearance and layout. Semantic HTML tags such as &ltheader&gt, &ltnav&gt, &ltfooter&gt were used to organize the page into clear sections. 
+                            The &ltheader&gt contains the website logo title and navigation bar,for users the move between pages. The main section contains the slideshow And content cards, Images are included With alternative text. 
+                            Properties as flex were used To align elements while padding and margin improved visual structure. &lthover&gt are used For interactive effects. 
+                            &ltColors&gt, &ltfonts&gt and background tags were defined in CSS To maintain consistent visual theme that matches the concept of health and well being 
+                            Flexbox is used in elements such as the header and card container to align items and distribute space evenly, while CSS Grid is used in the interactive gallery to create a responsive layout where gallery cards automatically adjust to different screen sizes using grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)).
+                            Hover effects such as image scaling (transform: scale) and brightness adjustments were implemented to provide visual feedback and make the interactive gallery more engaging for users.
+
+                        </p> 
+                    
+                    <h3>Accessibility</h3>
+                        <p> Accessibility was considered to ensure that the Website can be used By wide range of Users. Semantic elements were used to navigate the content easily. 
+                            Headings such as &lth1&gt and &lth2&gt were used in a logical order To organize information and improve readability. Navigation links were designed to be simple and clearly visible. These techniques help make the website more access and user friendly </p>
+                    
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST1.html#homeVal">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="home.html">Home page</a></p> <!--link to home page---> 
+            </section>
+
+            <section class="subContainers">
+                <h2 id="gal">Gallery Page</h2>
+                    <h3>Technical Description</h3>
+                        <p> The main structure includes &ltheader&gt, &ltnav&gt and &ltfooter&gt To create a Clear and accessible layout. Each gallery item was created using a &ltdiv&gt Container that includes &ltimg&gt Tag and heading to display the image and its title. 
+                            Styling properties such as flex and gap were used for responsive layout. Transition were applied to improve smooth hover effect. The model pop up was styled using position,background colour and display properties so that the enlarged image and description appear clearly above the page content. 
+                            These techniques help create a visually organized gallery.
+                            Styling decisions were made to create a visually appealing and interactive design while keeping the layout consistent with the rest of the website. Images are styled using object-fit: cover to ensure they fill the card without distortion, and border-radius is used to create smooth rounded corners.
+
+                        </p> 
+
+                    <h3>Accessibility</h3>
+                        <p>A logical HTML structure was created using Semantec elements such as &ltheader&gt ,&ltnav&gt and &ltfooter&gt. Headings were used to clearly label each gallery item helping users quickly understand the content.
+                            The pop-up includes a visible close button so users can easily exit the enlarged view. The ability to change font and color was used to improve readability. These techniques have made the gallery page easier to navigate and access.
+                        </p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST1.html#galVal">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="gallery.html">Gallery</a></p> <!--link to gallery--> 
+            </section>
+
+            <section class="subContainers">
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The main structure includes &ltheader&gt, &ltnav&gt and &ltfooter&gt To create a Clear and accessible layout. The &ltsection&gt Tags were used to divide the content into different topics such as health Importance,challanges and targets.
+                            Internal navigation links were Created using &lta&gt that connect to section IDs, allowing users to quickly jump to different parts of the page. Images were added using the &ltimg&gt tag to visually support the information.
+                            The scroll-behavior: smooth property was used to create smooth scrolling when users click internal links. </p> 
+
+                    <h3>Accessibility</h3>
+                        <p>A logical HTML structure was created using Semantec elements such as &ltheader&gt,&ltnav&gt and &ltfooter&gt.Headings such as &lth1&gt &lth2&gt were used in a logical order To organize information and improve readability.
+                            CSS styling such as readable fonts, proper spacing, and clear colour contrast was used to make the text easier to read. 
+                            These techniques help make the page more accessible and easier to navigate for all users.
+                        </p>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST1.html#contentVal">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="content_ST1.html">Content page 1</a></p> <!--link to content page 1---> 
+            </section>
+
+            <section class="subContainers">
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p> During the implementation process several challenges were encountered while developing the web pages. One difficulty was assuring that the lay out and styling remained Consistent across different pages. Especially when using a shared global CSS. 
+                        This was resolved by organizing the CSS and agreeing on the overall website style and visual design collaboratively with all team members.
+                        Another challenge Was applying different to specifics parts without affecting other elements. This issue was resolved by using more specific CSS selector Such as (ex : main section img) Instead of using styling globally.
+                        Through solving this challenge, I learned the importance of writing well-structured and specific CSS rules, understanding how CSS selectors work, and testing styles carefully to ensure that changes only apply to the intended parts of the webpage.
+                    </p> 
+            </section>
+
+            <section class="subContainers">
+                <h2 id="compliance"> Compliance</h2>
+                    <p> The web pages were developed while considering basic Janet web publication regulations related to responsible and appropriate online content. All information included on the pages is educational and related to Sustainable Development Goal 3 - Good Health and Well-Being, which ensures the content is appropriate and does not contain offensive, misleading, or harmful material. 
+                        Images used on the website were taken from free image sources and are used only for educational purposes, helping to respect copyright and intellectual property guidelines.<a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank"></a></p> 
+                        Clear navigation, readable text, and properly structured HTML were used to make the website accessible and user-friendly. By ensuring that the content is respectful, educational, and properly sourced, the website follows the general principles of Janet regulations for safe and responsible web page publication.
+                    
+            </section>
+
+            <section class="subContainers">
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>8th March 2026</td>
+                                    <td>Online</td>
+                                    <td>Agree SDG assign roles and make individual  wireframes.</td>
+                                    <td>Yes</td>
+                                    <td>Agreed to take responsibility of Student 1 and make my individual wireframe</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>14th March 2026</td>
+                                    <td>Physical</td>
+                                    <td>Confirmed the Logo and Colour Themes and topic</td>
+                                    <td>Yes</td>
+                                    <td>Gave feedback and ideas finalising the logo and colour theme and topic.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>19th March 2026</td>
+                                    <td>Onilne</td>
+                                    <td>Corrected some errors and discussed together</td>
+                                    <td>Yes</td>
+                                    <td>Checked my individual code and discussed whether our pages connected with global css.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>23rd March 2026</td>
+                                    <td>Onilne</td>
+                                    <td>Finalise content page ,page editor and validation related doubts</td>
+                                    <td>Yes</td>
+                                    <td>Began  my content page, Page editor and validation page</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>26th March 2026</td>
+                                    <td>Online</td>
+                                    <td>Check everyones' individual pages and shared pages</td>
+                                    <td>Yes</td>
+                                    <td>Finalized my individual content and added finishing touches to the shared pages</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>27th March 2026</td>
+                                    <td>Physical</td>
+                                    <td>Did final checks and integrated the whole project</td>
+                                    <td>yes</td>
+                                    <td>Supported the integration process</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section class="subContainers">
+                <h2 id="ref">References</h2>
+                    <ul class="ref">
+                        <li>Pexels (2025) Pexels Free Stock Photos. Available at: <a href="https://www.pexels.com">https://www.pexels.com</a>(Last accessed: 25 March 2026).</li><br>
+                        <li>World Health Organization (2025) Mental health: strengthening our response. Available at: <a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response">www.who.int/...</a> (Last accessed: 25 March 2026).</li><br>
+                        <li>United Nations Development Programme. SDG 3: Good Health. Available at: <a href="https://www.undp.org/sustainable-development-goals/good-health">sustainable-development-goals...</a></li>(Last accessed: 25 March 2026)
+                    </ul>
+            </section>
+
+            <p><a href="#top" class="top-btn">Go to Top ↑</a></p>
+            
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                <ul>
+                        <li><a href="#home">Home page </a></li>
+                        <li><a href="#gal">Gallery</a></li>
+                        <li><a href="#content">Content 1</a></li>
+                    </ul>            
+                
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+      <p>© 2026 Wellness Mission</p>
+      <p> 
+        <a href="pageEditor_ST1.html">Page Editor</a> |
+        <a href="validation_ST1.html">Validation</a>
+        <p>Naduni Samarawickrama : W2181791</p>
+      </p>
+    </footer>
+</body>
+</html>

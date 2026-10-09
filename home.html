@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELLNESS MISSION-Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <style>
+      main{
+        margin:2px;
+      }
+      
+      /* -------------------- Slideshow -------------------- */
+
+      .slideshow{
+      margin-bottom:20px;
+      }
+
+      .slideshow img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 8px 10px rgb(14,179, 225);
+        border: 5px solid rgb(14,179, 225);
+        margin-top: 10px;
+      }
+
+      /* -------------------- gallery Cards -------------------- */
+
+      .card{
+        width: 400px;
+        height: 500px;
+      }
+
+      .card ul li{
+        list-style-type: none;
+      }
+
+      .welcome{
+        margin: 20px 10px ;
+        border: 5px solid  rgb(14,179, 225);
+        padding: 9px 9px 20px;
+        border-radius: 20px;
+        box-shadow: 0 8px 10px rgb(14,179, 225);
+      }
+
+      .card-heading{
+        margin: 0 15px 15px;
+      }
+
+      .content-gallery{
+      display:grid;    /* Enables CSS Grid so gallery items are arranged in rows and columns */
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));   /* Create responsive columns:auto-automatically adjusts the number of columns*/
+      gap:20px;   /* Add space between the grid items*/
+      margin-top:20px;
+    }
+
+    .gallery-card{
+      position:relative;   /* text h3 and p positioned over the image using absolute positioning */
+      display:block;   /* takes full width */
+      height:250px;
+      overflow:hidden;    /* Hides any part of the image that goes outside the card when it zooms on hover */
+      border-radius:10px;
+      text-decoration:none;   /* Removes underline*/
+    }
+    
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition: 0.4s ease;
+    }
+
+    /* --------------Text over image------------------ */
+
+    .gallery-card h3, .gallery-card p{
+      position:absolute;    
+      left:0;
+      width:100%;
+      color:white;
+      padding:20px;
+      transition:background 0.6s;
+    }
+
+    .gallery-card:hover h3, .gallery-card:hover p{
+      background:rgba(0,0,0,0.6); 
+    }
+
+    .gallery-card img{
+      transition: 0.4s ease;
+    }
+
+    .gallery-card:hover img{
+      transform: scale(1.05);
+      filter: brightness(60%);   /* Darkens the image so the text on top becomes more visible */
+    }
+
+    .gallery-card p{
+      bottom:0;
+      font-size:14px;
+    }
+
+    .gallery-card h3{
+      top:0;
+      font-size:18px;
+    }
+
+    /* --------------padding ------------------ */
+    section p,h2{
+      padding:15px;
+    }
+    
+    ol{
+      padding: 30px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+          <h1><span>WELLNESS</span> MISSION</h1>
+          <p>Aiming for Good Health and Well-Being</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+      </div>
+
+      <div id="navigationbar">
+        <nav>
+          <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+    <main>
+
+      
+
+      
+      <!-- Slideshow -->
+      <div class="slideshow">
+        <img class="slide" src="images/pexels-diva-plavalaguna-6146814.jpg" alt="People enjoying healthy lifestyle">
+        <img class="slide" src="images/pexels-pavel-danilyuk-7653133.jpg" alt="Health checkup">
+        <img class="slide" src="images/pexels-fauxels-3184188.jpg" alt="balanced meal">
+        <img class="slide" src="images/pexels-olly-3794165.jpg" alt="Drink water">
+      </div>
+
+
+      <section class="welcome">
+        <h2>Welcome</h2>
+        <p>
+          "Achieving Good Health and Well-being is one of the most critical challenges of our century.
+          This website serves as a comprehensive resource for understanding <b>SDG 3</b>, highlighting the intersection of data, healthcare accessibility, and global policy. 
+          By examining the targets set —such as reducing maternal mortality and ending preventable epidemics—we provide a roadmap for how technology and 
+          collective action can safeguard the physical and mental health of our global community."  
+        </p>
+      </section>
+
+      <!--Card based content-->
+      <h2 class="card-heading">Actions to take as individuals</h2>
+
+      <div class="cardContainer">
+
+        <section class="card" >
+          <img class="image" src="images/pexels-kampus-7556590.jpg" alt="Good sleep">
+          <h3>Maintaining healthy Lifestyle</h3>
+          <p>Actions to take:</p>
+          <ul>
+            <li>Eat balanced and nutritious meals.</li>
+            <li>Exercise regularly to maintain physical fitness.</li>
+            <li>Get enough sleep and rest.</li>
+          </ul>
+        </section>
+
+        <section class="card" >
+          <img class="image" src="images/pexels-moe-magners-6670880.jpg" alt="Healthy habits">
+          <h3>Good Health Habits</h3>
+          <p>Actions to take:</p>
+          <ul>
+            <li>Attend regular health check-ups.</li>
+            <li>Follow proper hygiene practices.</li>
+            <li>Get vaccinated when necessary.</li>
+          </ul>
+        </section>
+
+        <section class="card" >
+          <img class="image" src="images/pexels-ivan-s-4624965.jpg" alt="Mental support">
+          <h3>Mental Health Awareness</h3>
+          <p>Actions to take:</p>
+          <ul>
+            <li>Talk openly with people.</li>
+            <li>Practice mindfulness and self control.</li>
+            <li>Seek support from professionals.</li>
+          </ul>
+        </section>
+
+        <section class="card" >
+          <img class="image" src="images/pexels-ivan-s-7213190.jpg" alt="Community support">
+          <h3>Community Support</h3>
+          <p>Actions to take: </p>
+          <ul>
+            <li>Volunteer in health awareness campaigns.</li>
+            <li>Support organizations promoting health programs.</li>
+            <li>Spread information about healthy living and benefits.</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- Interactive gallery content -->
+       
+
+        <h2>Explore Health Topics</h2>
+
+        <div class="content-gallery">
+
+          <section class="gallery-card">
+            <a href="content_ST1.html" >
+            <img class="image" src="images/pexels-hoang1nang-6962902.jpg" alt="Mental wellness">           
+            <h3>Global Health and Well-Being</h3>
+            <p>Explore what good health and well-being is.</p>
+            </a>
+          </section>
+
+          <section class="gallery-card">
+            <a href="content_ST2.html" >
+            <img class="image" src="images/pexels-janetrangdoan-1092730.jpg" alt="Healthy food">
+            <h3>Nutrition & Diet: Powering a Healthier Life.</h3>
+            <p>Explore how good nutrition matters.</p>
+            </a>
+          </section>
+        
+          <section class="gallery-card">
+            <a href="content_ST3.html" >
+            <img class="image" src="images/pexels-olly-3757377.jpg" alt="Exercise routine">
+            <h3>Staying Active for Better Health</h3>
+            <p>Understand how diet and exercise improve long-term health.</p>
+            </a>
+          </section>
+        
+          <section class="gallery-card">
+            <a href="content_ST4.html" >
+            <img class="image" src="images/pexels-shkrabaanthony-5215000.jpg" alt="Disease Prevention">        
+            <h3>Mental Health Matters</h3>
+            <p>Learn about mental health challenges and how awareness improves well-being.</p>
+            </a>
+          </section>
+          
+        </div>
+      
+
+      <section class="welcome">
+        <h2>Why Health Matters</h2>
+        <p>
+          Health and well-being are a lot needed by individuals and the society since it determines the quality of life, productivity and general growth. 
+          To individuals, good health enables people to live longer, be active and fully engaged in the day to day activities like education, work and socialization. 
+          The healthier individuals are physically and mentally, the better they may handle stress and make rational decisions and make beneficial contributions to their communities. 
+          To the society, a healthy population promotes economic growth, lowers the cost of healthcare and enhances the stability of the society. 
+          Healthier communities have a lower number of diseases, healthier population lifestyles, and social connections. 
+          Hence, the pursuit of health and well-being is not just a desirable objective to individuals alone but to the establishment of sustainable and successful societies.
+        </p>
+      </section>
+
+
+      <section class="welcome">
+        <h2>What You Can Explore</h2>
+
+        <ol>
+          <li>Global health challenges</li>
+          <li>Healthy lifestyle practices</li>
+          <li>Healthcare accessibility</li>
+          <li>Ways individuals can promote well-being</li>
+        </ol>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2026 Wellness Mission</p>
+      <p> 
+        <a href="pageEditor_ST1.html">Page Editor</a> |
+        <a href="validation_ST1.html">Validation</a>
+        <p>Naduni Samarawickrama : W2181791</p> 
+      </p>
+    </footer>
+
+    <script>
+
+      /* slideshow */
+      let slideIndex = 0;
+
+      function showSlides(){
+
+        let slides = document.querySelectorAll(".slideshow img");
+
+        // Hide all images
+        for(let i = 0; i < slides.length; i++){
+          slides[i].style.display = "none";
+        }
+
+        // Move to next slide
+        slideIndex++;
+
+        // Reset if it goes past last image
+        if(slideIndex > slides.length){
+          slideIndex = 1;
+        }
+
+        // Show current image
+        slides[slideIndex - 1].style.display = "block";
+
+        // Repeat every 3 seconds
+        setTimeout(showSlides, 3000);
+      }
+
+      // Automatically highlights the navigation link of the current page
+      window.onload = function(){
+        showSlides();
+      }
+
+    </script>
+
+  </body>
+
+</html>

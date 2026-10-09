@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* Minimal page-specific CSS only */
+
+.program-section{
+    position: relative;
+    margin: 40px 20px;
+}
+
+.filter-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.filter-box select{
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #0EB3E1;
+}
+
+.info-container{
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    margin-top: 20px;
+    border: 2px solid #0EB3E1;
+    border-radius: 15px;
+    background: #f9f9f9;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.program-card,
+.review-card{
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.program-card img{
+    width:100%;
+    max-height:160px;
+    object-fit:contain;
+    display:block;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+.review-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-box{
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+fieldset{
+    border: 2px solid #0EB3E1;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend{
+    font-weight: bold;
+    color: #0f8fb2;
+}
+
+label{
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+}
+
+.form-box textarea{
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-box button,
+.program-card button{
+    padding: 10px 16px;
+    background: #0f8fb2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-box button{
+    width: 100%;
+}
+
+.form-box button:hover,
+.program-card button:hover{
+    background: #0EB3E1;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+}
+
+#charCount{
+    text-align: right;
+    font-size: 12px;
+}
+
+#successMessage{
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+            <h1><span>WELLNESS</span> MISSION</h1>
+            <p>Aiming for Good Health and Well-Being</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+    </div>
+
+    <div id="navigationbar">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="ais.html">Action Impact Simulator</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="top">
+            <h2> Feedback & Program Directory</h2>
+            <p class="top-para">Explore programmes and share your feedback.</p>
+        </section>
+
+    <!-- Programmes -->
+    <section class="program-section">
+        <h2 style="text-align:center; color:#0f8fb2;">Health Programmes</h2>
+
+        <div class="filter-box">
+            <select>
+                <option>Most Popular</option>
+                <option>Nearest</option>
+                <option>Student Friendly</option>
+            </select>
+        </div>
+
+        <div class="info-container">
+
+            <div class="program-card">
+                <img src="images/feedbackfitness.webp" alt="Fitness programme">
+                <h3>Fitness Camp</h3>
+                <p>Daily exercise sessions to improve physical strength, stamina, and overall fitness.</p>
+                <button>Join</button>
+            </div>
+
+            <div class="program-card">
+                <img src="images/feedbackmeditation.jpg" alt="Meditation programme">
+                <h3>Meditation</h3>
+                <p>Relaxing mindfulness sessions designed to reduce stress and improve mental well-being.</p>
+                <button>Learn More</button>
+            </div>
+
+            <div class="program-card">
+                <img src="images/feedbacknutrition.jpg" alt="Nutrition programme">
+                <h3>Healthy Eating</h3>
+                <p>Guidance on diet planning and healthier food choices for everyday life.</p>
+                <button>Join</button>
+            </div>
+
+            <div class="program-card">
+                <img src="images/feedbackyoga.jpg" alt="Yoga programme">
+                <h3>Yoga</h3>
+                <p>Sessions that improve flexibility, posture, balance, and stress management.</p>
+                <button>Join</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section>
+        <h2 style="text-align:center;">User Reviews</h2>
+        <p style="text-align:center;"><b>8.6/10 Excellent</b></p>
+        <br>
+
+        <div class="review-container">
+
+            <div class="review-card">
+                <h3>Great Program</h3>
+                <p>Very useful and well organized.</p>
+                <p>John | 2026 | 9/10</p>
+            </div>
+
+            <div class="review-card">
+                <h4>Loved It</h4>
+                <p>A very good experience and easy to follow.</p>
+                <p>Anna | 2026 | 8/10</p>
+            </div>
+
+            <div class="review-card">
+                <h4>Very Helpful</h4>
+                <p>It helped me improve my health habits.</p>
+                <p>David | 2026 | 9/10</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section>
+        <br><br>
+        <h2 style="text-align:center;">Submit Feedback</h2>
+
+        <div class="form-box">
+            <form id="feedbackForm">
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <small class="error" id="nameError"></small>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <small class="error" id="emailError"></small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback Details</legend>
+
+                    <label for="programme">Programme</label>
+                    <select id="programme" name="programme">
+                        <option>Fitness Camp</option>
+                        <option>Meditation</option>
+                        <option>Healthy Eating</option>
+                        <option>Yoga</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" maxlength="200"></textarea>
+                    <p id="charCount">Remaining: 200</p>
+                    <small class="error" id="messageError"></small>
+                </fieldset>
+
+                <button type="submit">Submit Feedback</button>
+                <p id="successMessage"></p>
+
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Wellness Mission</p>
+    <p>
+        <a href="pageEditor_ST3.html">Page Editor</a> |
+        <a href="validation_ST3.html">Validation</a>
+        <p>Thinal Sandiru : W2181792</p>
+    </p>
+</footer>
+
+<script>
+const form = document.getElementById("feedbackForm");
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const messageError = document.getElementById("messageError");
+
+const charCount = document.getElementById("charCount");
+const successMessage = document.getElementById("successMessage");
+
+/* CHARACTER COUNTER */
+messageInput.addEventListener("input", function(){
+    let max = 200;
+    charCount.textContent = "Remaining: " + (max - messageInput.value.length);
+});
+
+/* VALIDATION */
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    successMessage.textContent = "";
+
+    let valid = true;
+
+    if(nameInput.value.trim() === ""){
+        nameError.textContent = "Name required";
+        valid = false;
+    }
+
+    if(emailInput.value.trim() === "" || !emailInput.value.includes("@")){
+        emailError.textContent = "Valid email required";
+        valid = false;
+    }
+
+    if(messageInput.value.trim() === ""){
+        messageError.textContent = "Message required";
+        valid = false;
+    }
+
+    if(valid){
+        successMessage.textContent = "Thank you for your feedback!";
+        form.reset();
+        charCount.textContent = "Remaining: 200";
+    }
+
+});
+</script>
+
+</body>
+</html>
