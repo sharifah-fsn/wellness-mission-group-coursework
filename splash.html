@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="4; url=home.html" id="redirectMeta">
+    <title>Splash Screen</title>
+
+    <style>
+        /* Background-image */
+        body {
+            background-image: url(images/splashImg.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            position: relative;
+            
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(28, 42, 50, 0.6); 
+            z-index: 0;
+        }
+
+        body > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Heading */
+        .topic {
+            margin-top: 140px;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            font-weight: bolder;
+        }
+
+        .topic h1 span {
+            font-style: italic;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .mission {
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+
+        .mission h2 {
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .mission h2 span {
+            color: rgb(14, 179, 225);
+        }
+
+        /* Our team */
+        .ourTeam h2 {
+            color: aliceblue;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .members {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .members p {
+            font-size: 20px;
+            border: 2px solid rgb(14, 179, 225);
+            padding: 8px 30px;
+            background-color: transparent;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+        }
+
+        /* Loader Animation */
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 6px solid rgba(241, 241, 241, 0.97); 
+            border-top: 6px solid rgb(14, 179, 225);               
+            border-radius: 50%;                          
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Countdown */
+        .counter {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+
+        /* Button */
+        .btn {
+            text-align: center;
+        }
+
+        .btn button {
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid rgb(14, 179, 225);
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            transition: background-color 0.7s ease;
+        }
+
+        .btn button:hover {
+            background-color: rgb(12, 112, 178);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <!-- Topic -->
+        <section class="topic">
+            <img src="images/logo.jpeg" alt="Website logo" class="logo">
+            <h1><span>WELLNESS</span> MISSION</h1>
+        </section>
+
+        <!-- Mission -->
+        <section class="mission">
+            <h2>
+                We aim to inspire <span>Good Health and Well-Being</span> by providing tips, 
+                resources, and actions that make a positive impact on daily life.
+            </h2>
+        </section>
+
+        <!-- Team -->
+        <section class="ourTeam">
+            <h2>Our Team</h2>
+
+            <div class="members">
+                <p>Naduni Samarawickrama</p>
+                <p>Nirmal Kalubowila</p>
+                <p>Thinal Sandiru</p>
+                <p>Sharifah Nazeem</p>
+            </div>
+        </section>
+
+        <!-- Loader -->
+        <div class="loader"></div>
+
+        <!-- Counter -->
+        <div class="counter">
+            <p>Entering Site in : <span id="counter">4</span> Seconds...</p>
+        </div>
+
+        <!-- Button -->
+        <div class="btn">
+            <button id="skip">SKIP INTRO</button>
+        </div>
+
+    </main>
+
+    <script>
+        // Countdown
+        let countdownElement = document.getElementById('counter');
+        let seconds = 4;
+
+        // Function to update countdown every second
+        function updateCountdown() {
+            countdownElement.textContent = seconds;
+            seconds--;
+
+            if (seconds >= 0) {
+                setTimeout(updateCountdown, 1000);
+            } 
+        }
+
+        // Start the countdown
+        updateCountdown();
+
+        // Skip button
+        let button = document.getElementById("skip");
+
+        // When button is clicked, go to home page
+        button.addEventListener("click", function() {
+            document.getElementById("redirectMeta").remove();
+            window.location.href = "home.html";
+        });
+    </script>
+</body>
+</html>

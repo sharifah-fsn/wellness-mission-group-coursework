@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* TEAM TITLE */
+.team-title{
+    text-align:center;
+    margin-top:30px;
+    color:#0f8fb2;
+}
+
+/* GRID LAYOUT */
+.team-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+    padding:40px;
+}
+
+/* TEAM CARD */
+.team-card{
+    position:relative;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
+    outline:none;
+}
+
+/* IMAGE */
+.team-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+/* BASIC INFO */
+.team-info{
+    padding:15px;
+    text-align:center;
+}
+
+.team-info h3{
+    color:#0f8fb2;
+    margin-bottom:5px;
+}
+
+.team-info p{
+    font-weight:bold;
+}
+
+/* HOVER EFFECT */
+.team-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(15,143,178,0.95);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    opacity:0;
+    transition:0.4s;
+}
+
+/* SHOW OVERLAY */
+.team-card:hover .overlay,
+.team-card:focus .overlay{
+    opacity:1;
+}
+
+/* OVERLAY TEXT */
+.overlay h4{
+    margin-bottom:10px;
+}
+
+.overlay p{
+    font-size:14px;
+}
+
+/* ACCESSIBILITY */
+.team-card:focus{
+    box-shadow:0 0 10px #0EB3E1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+            <h1><span>WELLNESS</span> MISSION</h1>
+            <p>Aiming for Good Health and Well-Being</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+    </div>
+
+    <div id="navigationbar">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="ais.html">Action Impact Simulator</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main>
+    
+<section class="top">
+    <h2>Our Team Members</h2>
+    <p class="top-para">Explore our team members</p>
+</section>
+
+
+<div class="team-container">
+
+<!-- STUDENT 1 -->
+<div class="team-card" tabindex="0">
+    <img src="images/naduniavatarnew.jpeg" alt="Student 1 photo">
+    <div class="team-info">
+        <h3>K.V.Naduni Samarawickrama</h3>
+        <p>Home Page & Gallery</p>
+    </div>
+    <div class="overlay">
+        <h4>Student 1</h4>
+        <p><b>Role:</b> HomePage and gallery developer</p>
+        <p>Created the homepage layout and ensured design consistency across the site.</p>
+    </div>
+</div>
+
+<!-- STUDENT 2 -->
+<div class="team-card" tabindex="0">
+    <img src="images/nirmalavatarnewwww.jpeg" alt="Student 2 photo">
+    <div class="team-info">
+        <h3>Don Amila Nirmal Dewthilina Kalubowila</h3>
+        <p>Splash Screen & Action Impact Simulator</p>
+    </div>
+    <div class="overlay">
+        <h4>Student 2</h4>
+        <p><b>Role:</b> Splash Screen & Action Impact Simulator  Developer</p>
+        <p>Designed the Splash screen and Action Impact Simulator for smooth user experience.</p>
+    </div>
+</div>
+
+<!-- STUDENT 3 -->
+<div class="team-card" tabindex="0">
+    <img src="images/thinalavatarnewww.jpeg" alt="Student 3 photo">
+    <div class="team-info">
+        <h3>W.D.Thinal Sandiru</h3>
+        <p>Team & Feedback</p>
+    </div>
+    <div class="overlay">
+        <h4>Student 3</h4>
+        <p><b>Role:</b> Team Page Developer</p>
+        <p>Built the team page and feedback system with interactive UI features.</p>
+    </div>
+</div>
+
+<!-- STUDENT 4 -->
+<div class="team-card" tabindex="0">
+    <img src="images/sharifaaaaneww.jpeg" alt="Student 4 photo">
+    <div class="team-info">
+        <h3>F Sharifah Nazeem</h3>
+        <p>Profile & Sitemap</p>
+    </div>
+    <div class="overlay">
+        <h4>Student 4</h4>
+        <p><b>Role:</b> Profile Developer</p>
+        <p>Developed the user profile and sitemap to enhance navigation.</p>
+    </div>
+</div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Wellness Mission</p>
+    <p> 
+        <a href="pageEditor_ST3.html">Page Editor</a> |
+        <a href="validation_ST3.html">Validation</a>
+        <p>Thinal Sandiru : W2181792</p>
+    </p>
+</footer>
+
+</body>
+</html>

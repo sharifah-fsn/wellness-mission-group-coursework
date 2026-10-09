@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Profile</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+
+            #intro{
+                font-weight: bold;
+                font-size:20px;
+                padding-left: 25px;
+            }
+
+            .sub{
+                background-color: whitesmoke;
+                padding:15px;
+                border-radius:15px;
+                margin:10px;
+                box-shadow:0px 7px 10px #0f8fb2;
+                border:2px solid #0f8fb2;
+                margin-bottom:30px;
+            }
+
+            .profile{
+                background-color: whitesmoke;
+                padding:15px;
+                border-radius:15px;
+                margin:20px auto;
+                width:70%;
+                box-shadow:0px 7px 10px #0f8fb2;
+                border:2px solid #0f8fb2;
+
+            }
+
+            .mainbutton{
+                margin-left:20px;
+                
+                margin-bottom:7px;
+                cursor: pointer;
+
+            }
+
+            .mainbutton:not(:disabled):hover{
+                transition:0.5s;
+                transform:scale(1.09);
+            }
+
+            #stepbutton{
+                display:flex;
+                flex-wrap:wrap;
+                gap:20px;
+                justify-content: center;  
+            }
+            .stepbutton{
+                margin:10px;
+                margin-left:30px;
+                cursor: pointer;
+                
+            }
+
+            .stepbutton:not(:disabled):hover{
+                transition:0.5s;
+                transform:scale(1.2);
+            }
+
+
+            #progresstext{
+                
+                font-weight:bold;
+                font-size:13px;
+
+            }
+
+            #progressbar{
+                width:100%;
+            }
+
+            .profile h4{
+                font-size:25px;
+            }
+
+            .profile h3{
+                font-size:35px;
+                text-align: center;
+            }
+
+            .profile p{
+                font-size:20px;
+            }
+
+            .stepbutton:disabled{
+                background-color: rgb(195, 194, 194);
+                color:white;
+                cursor:none;
+            }
+
+            #startbutton:disabled{
+                background-color: rgb(195, 194, 194);
+                color:white;
+                cursor:none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-container">
+                <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+                <div class="header-text">
+                <h1><span>WELLNESS</span> MISSION</h1>
+                <p>Aiming for Good Health and Well-Being</p>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search page content">
+                <button onclick="searchPage()">Search</button>
+            </div>
+
+            <div id="navigationbar">
+                <nav>
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Action Impact Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html" class="active">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="profilemain">
+            <section class="top">
+            <h2>WELLNESS MISSION USER PROFILE</h2>
+            <p class="top-para">Create your own Profile to track your habits.</p>
+        </section>
+            <!--Main Buttons-->
+            <button id="startbutton" class="mainbutton" onclick="Start()">Start</button>
+            <button class="mainbutton" onclick="Reset()">Reset</button> 
+
+            <!--The Steps Buttons-->
+            <section class="sub">
+                <div id="stepbutton">
+                    <button id="step1button" class="stepbutton" onclick="Step1()">Step 1</button>
+                    <button id="step2button" class="stepbutton" onclick="Step2()">Step 2</button>
+                    <button id="step3button" class="stepbutton" onclick="Step3()">Step 3</button>
+                    <button id="step4button" class="stepbutton" onclick="Step4()">Step 4</button>
+                
+                </div>
+                
+                <!--Progress Bar-->
+                <h3 id="stepscompleted">Steps 0 of 4 completed</h3>
+                <div id="progresstext">0% completed</div>
+                <progress id="progressbar" value="0" max="100"></progress>
+            </section>
+
+            <!--The Profile Progress-->
+            <section class="profile">
+                <h3>Your Profile</h3>
+                
+               <!--Step 1-->
+                <section class="content">
+                    <h4 id="topic1"><span style="display:none;">Topic 1</span></h4>
+                    <p id="t1question1" ><span style="display:none;">Question 1</span></p>
+                    <p id="t1question2"><span style="display:none;">Question 2</span></p>
+                    <p id="t1question3" ><span style="display:none;">Question 3</span></p>
+                </section>
+                <br>
+                <!--Step 2-->
+                <br>
+                <section class="content">
+                    <h4 id="topic2"><span style="display:none;">Topic 2</span></h4>
+                    <p id="t2question1"><span style="display:none;">Question 1</span></p>
+                    <p id="t2question2"><span style="display:none;">Question 2</span></p>
+                    <p id="t2question3"><span style="display:none;">Question 3</span></p>
+                </section>
+                <br>
+                <!--Step 3-->
+                <br>
+                <section class="content">
+                    <h4 id="topic3"><span style="display:none;">Topic 3</span></h4>
+                    <p id="t3question1"><span style="display:none;">Question 1</span></p>
+                    <p id="t3question2"><span style="display:none;">Question 2</span></p>
+                    <p id="t3question3"><span style="display:none;">Question 3</span></p>
+                </section>
+                <br>
+                <!--Step 4-->
+                <br>
+                <section class="content">
+                    <h4 id="topic4"><span style="display:none;">Topic 4</span></h4>
+                    <p id="t4question1" ><span style="display:none;">Question 1</span></p>
+                    <p id="t4question2"><span style="display:none;">Question 2</span></p>
+                    <p id="t4question3"><span style="display:none;">Question 3</span></p>
+                </section>
+                
+
+            </section>
+        </main>
+        
+
+       <footer>
+            <p>© 2026 Wellness Mission</p>
+            <p>
+            <a href="pageEditor_ST4.html">Page Editor</a> |
+            <a href="validation_ST4.html">Validation</a>
+            <p>Sharifah Nazeem : W2181783</p>
+            </p>
+        </footer> 
+
+        <script >
+            const totalprompts=12;
+            let completedprompts=0;
+
+            //For all questions
+            let questions= document.querySelectorAll(".question");
+
+            //Start
+            function Start(){
+                alert("Lets get Started!!!");
+                document.getElementById("startbutton").disabled=true;
+                Step1();
+            }
+
+            //Step 1
+            function Step1(){
+                
+                let skip=prompt("Do you want to skip this step? (yes/no)");
+
+                //Check if they want to skip step
+
+                if (skip.toLowerCase() === "yes"){ 
+                    return; //return to main page as they have skipped
+                }
+
+                if (skip.toLowerCase()==="no"){
+                    document.querySelector("#topic1").innerHTML="Personal Details";
+
+                    //Question 1
+                    let t1answer1=prompt("Enter a Username:");
+
+                    while(true){
+                        //validating so no empty slots
+                        if (t1answer1!==null && t1answer1!==""){ 
+                                document.querySelector("#t1question1").innerHTML="<b>Username: </b>"+ t1answer1;
+                                completedprompts++;
+                                break;
+                        }
+
+                        alert("Please enter a value")
+                        t1answer1=prompt("Enter a Username:");
+                    }
+                    
+                    //Question 2
+                    let t1answer2=prompt("Enter your Age:");
+
+                    while(true){
+                        // validating so only numbers are allowed
+                        if(t1answer2!==null && t1answer2!=="" && Number.isInteger(Number(t1answer2))){
+                                document.querySelector("#t1question2").innerHTML="<b>Age: </b>"+ t1answer2;
+                                completedprompts++;
+                                break;
+                        } 
+                        alert("Enter only integers!");
+                        t1answer2=prompt("Enter your Age:");
+                    }
+
+                        
+                    //Question 3
+                    let t1answer3=prompt("Are you a Student or Volunteer?");
+
+                    while(true){
+                        if(t1answer3!==null && t1answer3!==""){
+                                document.querySelector("#t1question3").innerHTML="<b>Student / Volunteer: </b>"+ t1answer3;
+                                completedprompts++;
+                                break;
+                        } 
+                        alert("Enter a value!");
+                        t1answer3=prompt("Are you a Student or Volunteer?");
+                    }
+                        
+                    ProgressBar("Step 1");
+                    document.getElementById("step1button").disabled=true;
+                    
+                
+                }else{
+                    alert("Enter yes/no !");
+                }
+
+            }
+                
+            function Step2(){
+                let skip=prompt("Do you want to skip this step? (yes/no)");
+
+                //Check if they want to skip step
+
+                if (skip.toLowerCase() === "yes"){ 
+                    return; //return to main page as they have skipped
+                }
+
+                if (skip.toLowerCase()==="no"){
+                    document.querySelector("#topic2").innerHTML="Daily Habits";
+
+                    //Question 1
+                    let t2answer1=prompt("How many glasses of water do you drink per day?");
+
+                    while(true){
+                        if (t2answer1!==null && t2answer1!=="" && Number.isInteger(Number(t2answer1))){
+                        document.querySelector("#t2question1").innerHTML="<b>Glasses of Water per day: </b>"+ t2answer1;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter an integer!");
+                        t2answer1=prompt("How many glasses of water do you drink per day?");
+                    }
+                    
+                    // Queston 2
+                    let t2answer2=prompt("How many hours of sleep do you get per day?");
+
+                    while(true){
+                        if(t2answer2!==null && t2answer2!=="" && Number.isInteger(Number(t2answer2))){
+                        document.querySelector("#t2question2").innerHTML="<b>Hours of Sleep per day: </b>"+ t2answer2;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter an integer!");
+                        t2answer2=prompt("How many hours of sleep do you get per day?");
+                    }
+                    
+                    //Question 3
+                    let t2answer3=prompt("How often do you exercise?");
+
+                    while(true){
+                        if (t2answer3!==null && t2answer3!==""){
+                        document.querySelector("#t2question3").innerHTML="<b>Exercise: </b>"+ t2answer3;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter a value!");
+                        t2answer3=prompt("How often do you exercise?");
+
+                    }
+                
+                
+                    ProgressBar("Step 2");
+                    document.getElementById("step2button").disabled=true;
+
+                }else{
+                    alert("Enter yes/no !");
+                }
+
+                
+            }
+
+            function Step3(){
+
+                let skip=prompt("Do you want to skip this step? (yes/no)");
+
+                //Check if they want to skip step
+
+                if (skip.toLowerCase() === "yes"){ 
+                    return; //return to main page as they have skipped
+                } 
+
+                if (skip.toLowerCase()==="no"){
+                    document.querySelector("#topic3").innerHTML="Mental Wellbeing";
+
+                    //Question 1
+                    let t3answer1=prompt("What is your daily screentime in hours?");
+
+                    while(true){
+                        if (t3answer1!==null && t3answer1!=="" && Number.isInteger(Number(t3answer1))){
+                        document.querySelector("#t3question1").innerHTML="<b>ScreenTime: </b>"+ t3answer1;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter an integer!");
+                        t3answer1=prompt("What is you daily screentime in hours?");
+                    }
+                    
+                    // Question 2
+                    let t3answer2=prompt("On the scale of 1-10 What is your stress level?");
+
+                    while(true){
+                        if (t3answer2!==null && t3answer2!=="" && Number.isInteger(Number(t3answer2))){
+                        document.querySelector("#t3question2").innerHTML="<b>Stress Level (1-10): </b>"+ t3answer2;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter an integer!");
+                        t3answer2=prompt("On the scale of 1-10 What is your stress level?");
+                    }
+                    
+                    //Question 3
+                    let t3answer3=prompt("What do you do to relax?");
+
+                    while(true){
+                        if(t3answer3!==null && t3answer3!==""){
+                        document.querySelector("#t3question3").innerHTML="<b>Relaxing activity: </b>"+ t3answer3;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter a value!");
+                        t3answer3=prompt("What do you do to relax?");
+                    }
+                    
+                    ProgressBar("Step 3");
+                    document.getElementById("step3button").disabled=true;
+
+                }else{
+                    alert("Enter yes/no !");
+                }
+            }
+
+                
+
+            function Step4(){
+
+                let skip=prompt("Do you want to skip this step? (yes/no)");
+
+                //Check if they want to skip step
+
+                if (skip.toLowerCase() === "yes"){ 
+                    return; //return to main page as they have skipped
+                }
+
+                if (skip.toLowerCase() === "no"){
+                    document.querySelector("#topic4").innerHTML="Goals";
+
+                    //Question 1
+                    let t4answer1=prompt("What are your goals?");
+
+                    while(true){
+                        if (t4answer1!==null && t4answer1!==""){
+                        document.querySelector("#t4question1").innerHTML="<b>Goal 1: </b>"+ t4answer1;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter a value!");
+                        t4answer1=prompt("What are your goals?");
+                    }
+                    
+                    // Queston 2
+                    let t4answer2=prompt("Goal 2");
+
+                    while(true){
+                        if(t4answer2!==null && t4answer2!==""){
+                        document.querySelector("#t4question2").innerHTML="<b>Goal 2: </b>"+ t4answer2;
+                        completedprompts++;
+                        break;
+                        }
+                        alert("Enter a value!");
+                        t4answer2=prompt("Goal 2");
+                    }
+                    
+                    //Question 3
+                    let t4answer3=prompt("Goal 3");
+
+                    while(true){
+                        if(t4answer3!==null && t4answer3!==""){
+                                document.querySelector("#t4question3").innerHTML="<b>Goal 3: </b>"+ t4answer3;
+                                completedprompts++;
+                                break;
+                        }
+                        alert("Enter a value!");
+                        t4answer3=prompt("Goal 3")
+                    }
+                    ProgressBar("Step 4");
+                    document.getElementById("step4button").disabled=true;
+
+                }else{    
+                    alert("Enter yes/no !");
+                }
+
+                
+            }
+
+            function ProgressBar(step){
+                let complete=(completedprompts/totalprompts)*100;
+                document.getElementById("stepscompleted").innerHTML=step +" of 4 completed"
+                document.getElementById("progresstext").innerHTML=complete + "% completed";
+                document.getElementById("progressbar").value=complete;
+            }
+
+            function Reset(){
+                document.getElementById("topic1").innerHTML="";
+                document.getElementById("t1question1").innerHTML="";
+                document.getElementById("t1question2").innerHTML="";
+                document.getElementById("t1question3").innerHTML="";
+                document.getElementById("topic2").innerHTML="";
+                document.getElementById("t2question1").innerHTML="";
+                document.getElementById("t2question2").innerHTML="";
+                document.getElementById("t2question3").innerHTML="";
+                document.getElementById("topic3").innerHTML="";
+                document.getElementById("t3question1").innerHTML="";
+                document.getElementById("t3question2").innerHTML="";
+                document.getElementById("t3question3").innerHTML="";
+                document.getElementById("topic4").innerHTML="";
+                document.getElementById("t4question1").innerHTML="";
+                document.getElementById("t4question2").innerHTML="";
+                document.getElementById("t4question3").innerHTML="";
+
+                completedprompts=0;
+                ProgressBar("Step 0");
+
+
+                document.getElementById("step1button").disabled=false;
+                document.getElementById("step2button").disabled=false;
+                document.getElementById("step3button").disabled=false;
+                document.getElementById("step4button").disabled=false;
+                document.getElementById("startbutton").disabled=false;
+            }
+
+        </script>
+    </body>
+</html>

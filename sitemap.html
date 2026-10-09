@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sitemap</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+
+            svg {
+                width: 100%;
+                max-width: 1100px;
+                height: auto;
+                background: whitesmoke;
+                border-radius: 10px;
+                display: block;
+                margin: 0 auto;
+                box-shadow:0px 7px 10px #0f8fb2;
+                border:2px solid #0f8fb2;
+            }
+
+            rect {
+                stroke: rgb(167, 217, 240);
+                stroke-width: 2;
+                cursor: pointer;
+            }
+
+            text {
+                fill:white;
+                font-size: 20px;
+                font-weight: bold;
+                text-anchor: middle;
+                text-align: center;
+            }
+
+            .subtext{
+                fill:black;
+            }
+
+            .line{
+                stroke:black;
+                stroke-width:3;
+            }
+
+            .parent{
+                fill:#0f8fb2;
+            }
+
+            .parent:hover{
+                transition:0.3s;
+                stroke-width: 7;
+            }
+
+            .child{
+                fill:rgb(120, 166, 178);
+            }
+
+            .child:hover{
+                transition:0.3s;
+                stroke-width: 7;
+            }
+
+            .content{
+                fill:rgb(69, 171, 194);
+            }
+
+            .content:hover{
+                transition:0.3s;
+                stroke-width: 7;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+                <div class="header-text">
+                <h1><span>WELLNESS</span> MISSION</h1>
+                <p>Aiming for Good Health and Well-Being</p>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search page content">
+                <button onclick="searchPage()">Search</button>
+            </div>
+
+            <div id="navigationbar">
+                <nav>
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Action Impact Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html" class="active">Sitemap</a></li>
+                </ul>
+                </nav>
+            </div>
+        </header>
+        
+
+        <main>
+
+            <div id="map">
+
+                <section class="top">
+                <h2>WELLNESS MISSION SITEMAP</h2>
+                <p class="top-para">Find your way across our website.</p>
+                </section>
+                <br>
+
+                <svg viewBox="0 0 2000 800">
+
+                    <!--Splash Screen-->
+                    <g>
+                        <a href="splash.html">
+                            <rect x="900" y="50" width="200" height="100" rx="15" class="parent" tabindex="0"></rect>
+                            <text x="1000" y="110">Splash Screen</text>
+                        </a>
+                    </g>
+
+                    <!--Home-->
+                    <g>
+                        <a href="home.html">
+                            <rect x="900" y="200" width="200" height="100" rx="15" class="parent" tabindex="0"></rect>
+                            <text x="1000" y="260">Home Page</text>
+                        </a>
+                    </g>
+
+                    <!--User Profile-->
+                    <g>
+                        <a href="profile.html">
+                            <rect x="900" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="1000" y="460">User Profile</text>
+                        </a>
+                    </g>
+
+                    <!--Gallery-->
+                    <g>
+                        <a href="gallery.html">
+                            <rect x="650" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="750" y="460">Gallery</text>
+                        </a>
+                    </g>
+
+                    <!--AIS-->
+                    <g>
+                        <a href="ais.html">
+                            <rect x="400" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="500" y="450">Action Impact </text>
+                            <text x="500" y="470">Simulator</text>
+                        </a>
+                    </g>
+
+                    <!--Content-->
+                    <g>
+                        <rect x="150" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                        <text x="250" y="460">Content Pages</text>  
+                    </g>
+
+                    <!--Content1-->
+                    <g>
+                        <a href="content_ST1.html">
+                            <rect x="50" y="600" width="150" height="100" rx="15" class="content" tabindex="0"></rect>
+                            <text x="125" y="650">Content Page</text>
+                            <text x="125" y="670">1</text>
+                        </a>
+                    </g>
+
+                    <!--Content2-->
+                    <g>
+                        <a href="content_ST2.html">
+                            <rect x="250" y="600" width="150" height="100" rx="15" class="content" tabindex="0"></rect>
+                            <text x="325" y="650">Content Page</text>
+                            <text x="325" y="670">2</text>
+                        </a>
+                    </g>
+
+                    <!--Content3-->
+                    <g>
+                        <a href="content_ST3.html">
+                            <rect x="450" y="600" width="150" height="100" rx="15" class="content" tabindex="0"></rect>
+                            <text x="525" y="650">Content Page</text>
+                            <text x="525" y="670">3</text>
+                        </a>
+                    </g>
+
+                    <!--Content4-->
+                    <g>
+                        <a href="content_ST4.html">
+                            <rect x="650" y="600" width="150" height="100" rx="15" class="content" tabindex="0"></rect>
+                            <text x="725" y="650">Content Page</text>
+                            <text x="725" y="670">4</text>
+                        </a>
+                    </g>
+
+                    <!--Feedback-->
+                    <g>
+                        <a href="feedback.html">
+                            <rect x="1150" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="1250" y="460">Feedback</text>
+                        </a>
+                    </g>
+
+                    <!--Team-->
+                    <g>
+                        <a href="team.html">
+                            <rect x="1400" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="1500" y="460">Team Page</text>
+                        </a>
+                    </g>
+
+                    <!--Sitemap-->
+                    <g>
+                        <a href="sitemap.html">
+                            <rect x="1650" y="400" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                            <text x="1750" y="460">Sitemap</text>
+                        </a>
+                    </g>
+
+                    <!--Page Editor-->
+                    <g>
+                        <rect x="1400" y="600" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                        <text x="1500" y="660">Page Editor</text>   
+                    </g>
+
+                    <!--Validation-->
+                    <g>
+                        <rect x="1650" y="600" width="200" height="100" rx="15" class="child" tabindex="0"></rect>
+                        <text x="1750" y="660">Validation Report</text>   
+                    </g>
+
+                    <text x="1650" y="740" class="subtext">Page Editor and Validation Report links can be accessible</text>
+                    <text x="1650" y="770" class="subtext">through the relavent pages.</text>
+                    
+                    <!--Connecting Lines-->
+                    <g>
+                        <line x1="1000" y1="150" x2="1000" y2="200" class="line"></line>
+                        <line x1="1000" y1="300" x2="1000" y2="400" class="line"></line>
+                        <line x1="250" y1="350" x2="1750" y2="350" class="line"></line>
+                        <line x1="250" y1="350" x2="250" y2="400" class="line"></line>
+                        <line x1="500" y1="350" x2="500" y2="400" class="line"></line>
+                        <line x1="750" y1="350" x2="750" y2="400" class="line"></line>
+                        <line x1="1250" y1="350" x2="1250" y2="400" class="line"></line>
+                        <line x1="1500" y1="350" x2="1500" y2="400" class="line"></line>
+                        <line x1="1750" y1="350" x2="1750" y2="400" class="line"></line>
+                        <line x1="250" y1="500" x2="250" y2="550" class="line"></line>
+                        <line x1="125" y1="550" x2="725" y2="550" class="line"></line>
+                        <line x1="125" y1="550" x2="125" y2="600" class="line"></line>
+                        <line x1="325" y1="550" x2="325" y2="600" class="line"></line>
+                        <line x1="525" y1="550" x2="525" y2="600" class="line"></line>
+                        <line x1="725" y1="550" x2="725" y2="600" class="line"></line>
+                    </g>
+                    
+
+                </svg>
+            </div>
+
+        </main>
+        <footer>
+            <p>© 2026 Wellness Mission</p>
+            <p>
+            <a href="pageEditor_ST4.html">Page Editor</a> |
+            <a href="validation_ST4.html">Validation</a>
+            <p>Sharifah Nazeem : W2181783</p>
+            </p>
+        </footer> 
+    </body>
+</html>
