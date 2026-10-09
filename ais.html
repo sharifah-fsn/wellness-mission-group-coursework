@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Impact simulator</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        
+
+        /*Adjust card size */
+        .card{
+            
+            width: 400px;
+            height: 410px;
+            
+        }
+
+        
+        /*Style for selected card */
+        .selected{
+            filter: brightness(1.05);
+            background: rgba(230, 245, 250, 0.5);
+            box-shadow: 0 8px 20px rgb(58, 217, 10);
+            border: 2px solid rgb(0, 255, 64);
+            backdrop-filter: blur(10px);
+            
+        }
+
+
+        .selected:hover{
+            transform: scale(1.05);
+            filter: brightness(1.05);
+            background: rgba(230, 245, 250, 0.5);; 
+            box-shadow: 0 8px 20px rgb(58, 217, 10);
+            border: 2px solid rgb(0, 255, 64);
+           
+        }
+
+        /*Feedback container box*/
+        .feedbackContainer{
+            border: none;
+            padding: 15px;
+            border-radius: 20px;
+            width: 45%;
+            box-shadow: 0 2px 10px black;
+            background-color: whitesmoke;
+            margin: 80px auto 20px;
+            
+        }
+
+        /*Reset button*/
+        .feedbackContainer button{
+            
+            font-weight: bold;
+            display: block;
+            margin: 15px auto 0;
+            
+            
+        }
+
+        
+
+        /*Background images change according to the impact levels*/
+        body.low-bg {
+            background-image: url(images/lowImpactBg2.jpg);
+            background-position:center ;
+            
+        }
+
+        body.medium-bg {
+            background-image: url(images/MediumImpactBg.jpg);
+            background-position:center top;
+           
+        }
+        
+        body.high-bg {
+            background-image: url(images/highImpactBg.jpg);
+            background-position:center top;
+           
+        }
+
+        /*Common background setting*/
+        body.low-bg,
+        body.medium-bg,
+        body.high-bg {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            position: relative;
+        }
+
+        /*Dark overlay for improve readability*/
+        body.low-bg::before,
+        body.medium-bg::before,
+        body.high-bg::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(28, 42, 50, 0.6);
+            z-index: 0;
+        }
+
+        /*Keep content above overlay */
+        body > * {
+            position: relative;
+            z-index: 3; /* content appears above overlay */
+            
+        }
+
+        body{
+            transition: background-image 1s ease-in-out;
+        }
+
+        
+
+        /* Selected label on cards */
+        .card.selected::after {
+            content: "✓ Selected";
+            position: absolute;
+            bottom: 10px;
+            left: 75%;
+            transform: translateX(-50%);
+            
+            background: rgba(0, 255, 64, 0.9);
+            color: black;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show when selected */
+        .card.selected::after {
+            opacity: 1;
+        }
+
+        /*Text color and border shadows change according to the impact levels*/
+        .lowText{
+            border-color: red;
+            box-shadow: 15px 15px 15px red;
+            
+        }
+
+        .lowText span{
+            color: red;
+            font-weight: bold;
+        }
+
+
+        .mediumText{
+            border-color: orange;
+            box-shadow: 15px 15px 15px orange;
+        }
+        .mediumText span{
+            color: orange;
+            font-weight: bold;
+        }
+
+        .highText{
+            border-color:greenyellow;
+            box-shadow: 15px 15px 15px greenyellow;
+        }
+        .highText span{
+            color: green;
+            font-weight: bold;
+        }
+
+        .impact{
+            font-weight: bolder;
+            color: rgb(36, 118, 20);
+        }
+
+        .total{
+            font-size: 30px;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+      <div class="header-container">
+        <img src="images/logo.jpeg" alt="Wellness Mission Logo" class="logo">
+        <div class="header-text">
+          <h1><span>WELLNESS</span> MISSION</h1>
+          <p>Aiming for Good Health and Well-Being</p>
+        </div>
+      </div>
+
+      <!-- Search box -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search page content">
+        <button onclick="searchPage()">Search</button>
+      </div>
+
+      <!-- Navigation bar -->
+      <div id="navigationbar">
+        <nav>
+          <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html" class="active">Action Impact Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+
+
+
+    <main>
+
+        <!-- Page title -->
+        <section class="top">
+            <h2>WELLNESS MISSION ACTION SIMULATOR</h2>
+            <p class="top-para">Select actions you practice to see your health impact level.</p>
+        </section>
+
+
+        <!-- Cards container -->
+        <div class="cardContainer">
+
+            <section class="card" data-impact="2">
+                <img class="image" src="images/drinkWater.jpg" alt="Person drinking a glass of water to stay hydrated">
+                <h3>Stay Hydrated</h3>
+                <p>Drink enough water throughout the day to keep your body running well.</p>
+                <p class="impact">Impact : 2 points</p>
+
+            </section>
+
+            <section class="card" data-impact="3">
+                <img class="image" src="images/screenTime.jpg"  alt="Woman looking at her smartphone">
+                <h3>Limit Screen Time</h3>
+                <p>Put your phone or computer down for a while, especially before sleeping.</p>
+                <p class="impact">Impact : 3 points</p>
+
+            </section>
+
+            <section class="card" data-impact="4">
+                <img class="image" src="images/junkFoods.jpg" alt="Junk foods">
+                <h3>Reduce Junk Food Intake</h3>
+                <p>Limit chips, sugary snacks, and fast food to feel healthier.</p>
+                <p class="impact">Impact : 4 points</p>
+
+            </section>
+
+            <section class="card" data-impact="5">
+                <img class="image" src="images/medicalCheckup.jpg" alt="Doctor checking a patient during routine health checkup">
+                <h3>Regular Medical Checkups</h3>
+                <p>Visit a doctor for quick health checks or vaccines.</p>
+                <p class="impact">Impact : 5 points</p>
+
+            </section>
+
+            <section class="card" data-impact="4">
+                <img class="image" src="images/sleeping.jpg" alt="Person peacefully sleeping in a bed">
+                <h3>Maintain a Sleep Routine</h3>
+                <p>Go to bed and wake up around the same time every day to feel rested.</p>
+                <p class="impact">Impact : 4 points</p>
+
+            </section>
+
+            <section class="card" data-impact="5">
+                <img class="image" src="images/jogging.jpg" alt="Person jogging outdoors to stay active">
+                <h3>Stay Physically Active</h3>
+                <p>Go for daily walks, play sports, or just move around instead of sitting all day.</p>
+                <p class="impact">Impact : 5 points</p>
+
+            </section>
+
+            <section class="card" data-impact="3">
+                <img class="image" src="images/spendOutside.jpg" alt="Individual enjoying sunlight and fresh air">
+                <h3>Spend Time Outdoors</h3>
+                <p>Step outside for fresh air and sunlight to boost your energy and mood.</p>
+                <p class="impact">Impact : 3 points</p>
+
+            </section>
+
+             <section class="card" data-impact="2">
+                <img class="image" src="images/useStairs.jpg" alt="use Stairs">
+                <h3>Use Stairs Instead of Elevators</h3>
+                <p>Add little movements to your day by taking stairs when possible.</p>
+                <p class="impact">Impact : 2 points</p>
+
+            </section>
+
+            
+
+
+        </div>
+
+         <!-- Feedback section -->
+        <div class="feedbackContainer">
+            <p class="total">Total Points :<span id="total">0</span></p><br>
+            <p>Selected Actions :<span id="num">0</span></p>
+            <p>Impact Level :<span id="level"></span></p>
+            <p>Feedback :<span id="feedback"></span></p>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+    </main>
+    <footer>
+        <p>© 2026 Wellness Mission</p>
+        <p>
+        <a href="pageEditor_ST2.html">Page Editor</a> | 
+        <a href="validation_ST2.html">Validation</a>
+        <p>Nirmal Kalubowila : W2181784</p>
+        </p>
+    </footer>
+
+    <script>
+
+//selected cards
+let cards = document.querySelectorAll('.card');
+
+// Get elements
+let counter = document.getElementById('num');
+let totalPoints = document.getElementById('total');
+let impactLevel = document.getElementById('level');
+let feedback = document.getElementById('feedback');
+let reset = document.getElementById('reset-btn');
+let container = document.querySelector('.feedbackContainer');
+
+//count selected class
+function updateSelectCount(){
+    let count = 0
+    for(let i = 0; i<cards.length;i++){
+        if(cards[i].classList.contains('selected')){
+            count+=1;
+        }
+    }
+    counter.textContent = count;
+}
+
+//Count total points
+function updateTotalPoints(){
+    let total = 0
+    for(let i = 0; i < cards.length; i++){
+    if(cards[i].classList.contains('selected')){
+        total+= Number(cards[i].getAttribute('data-impact'));
+    }
+}
+
+    totalPoints.textContent = total;
+
+    return total;
+}
+
+
+//update Impact level
+function updateImpactLevel(){
+    let value = updateTotalPoints();
+
+    container.classList.remove('lowText', 'mediumText', 'highText');
+
+    if(value == 0){
+        impactLevel.textContent ="";
+        container.classList.remove('lowText', 'mediumText', 'highText');
+    }
+
+    else if(value <= 7){
+        impactLevel.textContent = "Low Impact";
+        container.classList.add('lowText');
+    }else if(value > 7 && value <=18){
+        impactLevel.textContent = "Medium Impact";
+        container.classList.add('mediumText');
+    }else{
+        impactLevel.textContent = "High Impact";
+        container.classList.add('highText');
+    }
+}
+
+//update feedback 
+function updateFeedback(){
+    let value = updateTotalPoints();
+
+    if(value == 0){
+        feedback.textContent ="";
+    }
+
+    else if(value <= 7){
+        feedback.textContent = "You are just getting started. Try adding more healthy habits!";
+    }
+    else if(value > 7 && value <=18){
+        feedback.textContent = "Good job! You are maintaining some healthy habits. Keep improving!";
+    }
+    else{
+        feedback.textContent = "Excellent! You are following a very healthy lifestyle. Keep it up!";
+    }
+}
+
+//reset function
+reset.addEventListener('click', function(){
+    for(let i = 0; i< cards.length; i++){
+        cards[i].classList.remove('selected')
+    }
+
+    counter.textContent = 0;
+    totalPoints.textContent = 0;
+    impactLevel.textContent = "";
+    feedback.textContent = "";
+    document.body.classList.remove('low-bg', 'medium-bg', 'high-bg');
+    container.classList.remove('lowText', 'mediumText', 'highText');
+
+});
+
+//update background image
+function updateBackground(){
+
+    let value = updateTotalPoints();
+
+    document.body.classList.remove('low-bg', 'medium-bg', 'high-bg');
+    
+    if(value == 0){
+        document.body.classList.remove('low-bg', 'medium-bg', 'high-bg');
+    }
+
+    else if(value <= 7){
+        document.body.classList.add('low-bg');
+    }
+    else if(value > 7 && value <=18){
+         document.body.classList.add('medium-bg');
+    }
+    else{
+        document.body.classList.add('high-bg');
+    }
+}    
+
+
+
+//Add selected class for selected class
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function() {
+        this.classList.toggle('selected');
+        updateSelectCount();
+        updateTotalPoints();
+        updateImpactLevel();
+        updateFeedback();
+        updateBackground();
+    });
+}
+
+
+    </script>
+</body>
+</html>
