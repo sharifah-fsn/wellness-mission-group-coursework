@@ -1,0 +1,318 @@
+/* -------------------- CSS VARIABLES (Color Palette) -------------------- */
+:root {
+    --primary: #0f8fb2;
+    --secondary: #0EB3E1;
+    --secondary-dark: #0999c7;
+    --background: #ffffff;
+    --card-bg: rgba(242, 242, 242, 0.9);
+    --hover-bg: rgba(230, 245, 250, 0.5);
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --accent-red: #e74c3c;
+    --accent-blue: rgb(25, 81, 116);
+    --shadow: black;
+}
+
+/* -------------------- General Reset -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------- Body -------------------- */
+body {
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* -------------------- Header -------------------- */
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-text h1 {
+    font-size: 40px;
+}
+
+.header-text h1 span {
+    font-style: italic;
+}
+
+.header-text p {
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* -------------------- Navigation -------------------- */
+#navigationbar nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+#navigationbar nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#navigationbar nav ul li a:hover,
+#navigationbar nav ul li a.active {
+    background-color: var(--text-light);
+    color: var(--secondary);
+}
+
+/* -------------------- Search Box -------------------- */
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px;
+}
+
+.search-box input {
+    padding: 6px 10px;
+    border: 2px solid var(--secondary);
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-box input:focus {
+    border-color: var(--secondary-dark);
+    outline: none;
+}
+
+/* -------------------- Buttons -------------------- */
+button {
+    padding: 6px 12px;
+    background-color: var(--background);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
+/* -------------------- Cards -------------------- */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card {
+    
+    padding: 10px;
+    border-radius: 25px;
+    background: var(--card-bg);
+    border: 2px solid var(--secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px var(--secondary);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: var(--hover-bg);
+    border: 2px solid var(--accent-red);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
+}
+
+.image {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 5px 10px var(--shadow);
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: rgba(255,255,255,0.8);
+}
+
+/* -------------------- Go to Top Button -------------------- */
+.top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--background);
+    color: var(--secondary);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 3px solid var(--secondary-dark);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.top-btn:hover {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
+/* -------------------- Content Page -------------------- */
+.topic {
+    text-align: center;
+}
+
+.topic h2 {
+    margin: 20px 0;
+}
+
+.main-section {
+    border: 3px solid var(--secondary);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 20px;
+    width: 40%;
+    box-shadow: 2px 2px 5px var(--secondary);
+    text-align: center;
+    background-color: var(--card-bg);
+}
+
+.main-section h2 {
+    color: var(--accent-red);
+}
+
+.main-section a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-dark);
+    border: 1px solid var(--secondary);
+    padding: 6px;
+    border-radius: 8px;
+    background-color: var(--background);
+    width: 90%;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.main-section a::after {
+    content: " ➤";
+    color: var(--accent-red);
+}
+
+.main-section a:hover {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
+/* Images in content */
+.cont-image {
+    max-width: 50%;   /* makes image shrink with container */
+    height: auto;      /* keeps aspect ratio */
+    object-fit: cover;
+    border-radius: 30px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 5px 10px 20px var(--shadow);
+}
+
+/* Content sections */
+.content-container {
+    margin: 30px;
+}
+
+.subContainers {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    box-shadow: 0 8px 20px var(--secondary);
+}
+
+.subContainers h2 {
+    color: var(--accent-blue);
+}
+
+/* -------------------- Reference Links -------------------- */
+#references a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+#references a:visited {
+    color: purple;
+}
+
+#references a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+#references a:active {
+    color: orange;
+}
+
+section p {
+    text-align: justify;
+}
+
+ul{
+    list-style: none;
+}
+
+.top-para{
+    text-align: center;
+}
+.top{
+    margin-top:0px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+        
